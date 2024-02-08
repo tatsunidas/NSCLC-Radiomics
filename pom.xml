@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.vis</groupId>
+  <artifactId>NSCLCRadiomics</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+	  <maven.compiler.source>11</maven.compiler.source>
+	  <maven.compiler.target>11</maven.compiler.target>
+	  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <repositories>
+	  <repository>
+      <id>SciJava Public Repository</id>
+      <name>SciJava</name>
+      <url>https://maven.scijava.org/content/repositories/public/</url>
+    </repository>
+  </repositories>
+  
+  <dependencies>
+	  <!-- https://mvnrepository.com/artifact/org.dcm4che/dcm4che-core -->
+	  <dependency>
+		    <groupId>org.dcm4che</groupId>
+		    <artifactId>dcm4che-core</artifactId>
+		    <version>5.31.1</version>
+	  </dependency>
+  </dependencies>
+</project>
