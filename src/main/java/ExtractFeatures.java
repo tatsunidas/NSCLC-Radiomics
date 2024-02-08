@@ -44,6 +44,7 @@ public class ExtractFeatures {
 				System.out.println(masksList.get(i).getName());
 				throw new Exception("image and mask are not paired.");
 			}
+			String id_ = imagesList.get(i).getName();
 			Date start = new Date();
 			FolderOpener opener = new FolderOpener();
 			opener.sortByMetaData(false);//set false sorting by image number, to activate z axis sorted images by file names.
@@ -55,6 +56,7 @@ public class ExtractFeatures {
 				ResultsTable res_ = radiomics.execute(im, msk, RadiomicsJ.targetLabel);
 				if(res == null) {
 					res = res_;
+					res.addValue("ID", id_);
 					Date end = new Date();
 					long diff = end.getTime() - start.getTime();
 					String TimeTaken = String.format("[%s] hours : [%s] mins : [%s] secs",
@@ -68,6 +70,10 @@ public class ExtractFeatures {
 				String[] cols = colsString.replace(" ","").split("\t");
 				res.addRow();
 				for(String col : cols) {
+					if(col.equals("ID")) {
+						res.addValue(col, id_);
+						continue;
+					}
 					res.addValue(col, res_.getStringValue(col, 0));
 				}
 			} catch (Exception e) {
