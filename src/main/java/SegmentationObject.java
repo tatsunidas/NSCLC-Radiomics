@@ -21,6 +21,7 @@ import ij.process.ImageProcessor;
 public class SegmentationObject {
 	
 	/*
+	 * LUNG1-128 Segmentation File not included.
 	 * only one : 050,067,115,149,210
 	 * only 2 : 301
 	 */
@@ -71,7 +72,6 @@ public class SegmentationObject {
 								try {
 									convertToImagePlus(dcms[0].getAbsolutePath(), saveLoc);
 								} catch (Exception e) {
-									// TODO Auto-generated catch block
 									e.printStackTrace();
 								}
 							}
